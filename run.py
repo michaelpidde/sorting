@@ -1,6 +1,6 @@
 import random, time, sort
 
-values = range(100)
+values = range(1000)
 random.shuffle(values)
 
 print "Starting:\n" + str(values)
@@ -8,5 +8,6 @@ print "Starting:\n" + str(values)
 start = time.clock()
 sorted = sort.insertion(values)
 end = time.clock()
+
 print "Ending:\n" + str(sorted)
-print "Time: " + str((end - start) * 60) + "s"
+print "Time: " + str(end - start) + "s"
