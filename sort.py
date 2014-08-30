@@ -21,3 +21,20 @@ def insertion(values):
 					# Insert it at the head.
 					sorted.insert(0, value)
 	return sorted
+
+
+def selection(values):
+	min = 0
+	for index, value in enumerate(values):
+		# set current index as lowest value
+		min = index
+		for subIndex, compare in enumerate(values[index+1:]):
+			# iterate through remaining items and find the smallest
+			if compare < values[min]:
+				# Reset min - make sure to add index since we're looping through a sub-list.
+				# Make sure to also add 1 since we're comparing 1 step ahead of the current outter loop index.
+				min = subIndex + index + 1
+		if min > index:
+			# if there was a lower value found later in the list, swap the items
+			values[index], values[min] = values[min], values[index]
+	return values
